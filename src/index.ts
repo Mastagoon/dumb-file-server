@@ -5,7 +5,7 @@ import { UploadedFile } from "express-fileupload"
 dotenv.config()
 
 const FILE_NAME = "clientinfo.xml"
-const filepath = path.join(__dirname, "file", "..", FILE_NAME)
+const filepath = path.join(__dirname, "..", "file", FILE_NAME)
 
 const main = async () => {
   const PORT = process.env.PORT || 8080
@@ -13,6 +13,9 @@ const main = async () => {
   app.listen(PORT, () => console.log(`Server running on ${PORT}`))
 
   app.get("/", (_req, res) => {
+    console.log("Download request")
+    console.log(filepath)
+    console.log(__dirname)
     return res.download(filepath)
   })
 
