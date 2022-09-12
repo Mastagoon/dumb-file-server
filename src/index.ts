@@ -5,7 +5,7 @@ import fileUpload, { UploadedFile } from "express-fileupload"
 dotenv.config()
 
 const FILE_NAME = "clientinfo.xml"
-const filepath = path.join(__dirname, "..", "file", FILE_NAME)
+const filepath = path.join(__dirname, "..", FILE_NAME)
 
 const main = async () => {
   const PORT = process.env.PORT || 8080
